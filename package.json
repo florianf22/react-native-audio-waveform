@@ -33,7 +33,8 @@
     "*.podspec"
   ],
   "scripts": {
-    "prepare": "husky install && yarn build",
+    "build:component": "rollup -c build/rollup.config.js",
+    "prepare": "yarn build:component || npm run build:component",
     "clean": "rm -rf node_modules",
     "build": "rm -rf lib && tsc -p .",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
