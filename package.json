@@ -33,8 +33,7 @@
     "*.podspec"
   ],
   "scripts": {
-    "build:component": "rollup -c build/rollup.config.js",
-    "prepare": "yarn build:component || npm run build:component",
+    "prepare": "husky install && yarn build",
     "clean": "rm -rf node_modules",
     "build": "rm -rf lib && tsc -p .",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
@@ -111,7 +110,6 @@
     ]
   },
   "dependencies": {
-    "lodash": "^4.17.21",
-    "react-native-blob-util": "^0.19.11"
+    "lodash": "^4.17.21"
   }
 }
